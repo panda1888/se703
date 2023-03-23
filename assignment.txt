@@ -1,0 +1,271 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "21d1d1a2",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Enter Hours:45\n",
+      "Enter rate per hour:10\n",
+      "475.0\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Rewrite your pay computation with time-and-a- half for overtime and create a function called compute pay which takes two parameters ( hours and rate).\n",
+    "\n",
+    "def computepay(h,r):\n",
+    "    if h > 40:\n",
+    "        p = 1.5 * r * (h - 40) + (40 *r)\n",
+    "    else:\n",
+    "        p = h * r\n",
+    "    return p\n",
+    "    \n",
+    "hrs = input(\"Enter Hours:\")\n",
+    "hr = float(hrs)\n",
+    "rphrs = input(\"Enter rate per hour:\")\n",
+    "rphr = float(rphrs)\n",
+    "\n",
+    "p = computepay(hr,rphr)\n",
+    "print(p)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "a609dcbe",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "the largest value in the list is: 74\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Find the Largest value from a given list [9, 41, 12, 3, 74, 15]\n",
+    "\n",
+    "lst = [9, 41, 12, 3, 74, 15]\n",
+    "largest = max(lst)\n",
+    "print(\"the largest value in the list is:\", largest)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "6eb98175",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "the smallest value in the list is: 3\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Find the smallest value from a given list [9, 41, 12, 3, 74, 15]\n",
+    "\n",
+    "lst = [9, 41, 12, 3, 74, 15]\n",
+    "smallest = min(lst)\n",
+    "print(\"the smallest value in the list is:\", smallest)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "9c538065",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "the average value in the list is: 25.666666666666668\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Find the average value from a given list [9, 41, 12, 3, 74, 15]\n",
+    "\n",
+    "lst = [9, 41, 12, 3, 74, 15]\n",
+    "average = sum(lst)/len(lst)\n",
+    "print(\"the average value in the list is:\", average)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "df4f67e0",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "True\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Search if a given value 74 is present in a given list [9, 41, 12, 3, 74, 15]\n",
+    "\n",
+    "lst = [9, 41, 12, 3, 74, 15]\n",
+    "print(74 in lst)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "9203643b",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Enter the filename: mbox.txt\n",
+      "The file mbox.txt has 132045 lines.\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Input a file mbox.txt during runtime and count the number of lines.\n",
+    "\n",
+    "filename = input(\"Enter the filename: \")\n",
+    "line_count = sum(1 for line in open(filename))\n",
+    "\n",
+    "print(f\"The file {filename} has {line_count} lines.\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "baa5985a",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "how many numbers do you want to enter? 5\n",
+      "enter number 1: 5\n",
+      "enter number 2: 10\n",
+      "enter number 3: 15\n",
+      "enter number 4: 20\n",
+      "enter number 5: 25\n",
+      "The average of the 5 numbers is: 15.0\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Take multiple inputs from user one by one and find their average.\n",
+    "\n",
+    "n = int(input(\"how many numbers do you want to enter? \"))\n",
+    "total = sum(float(input(f\"enter number {i+1}: \")) for i in range(n))\n",
+    "average = total / n\n",
+    "print(f\"The average of the {n} numbers is: {average}\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "ce22b84e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "enter a sentence: grapes are sour\n",
+      "the sentence grapes are sour has 3 words.\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Enter a sentence and count of words in that sentence\n",
+    "\n",
+    "sentence = input(\"enter a sentence: \")\n",
+    "words = sentence.split()\n",
+    "num_words =len(words)\n",
+    "print(f\"the sentence {sentence} has {num_words} words.\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "ae741a02",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Enter the filename: mbox.txt\n",
+      "The most common word in mbox.txt is 2007\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Find the most common word in a file.\n",
+    "\n",
+    "from collections import Counter\n",
+    "filename = input(\"Enter the filename: \")\n",
+    "\n",
+    "#Open the file and read its contents\n",
+    "\n",
+    "with open(filename) as f:\n",
+    "    contents = f.read()\n",
+    "\n",
+    "#Split the contents into words and count their frequency\n",
+    "word_counts = Counter(contents.split())\n",
+    "\n",
+    "#Find the most common word and its count\n",
+    "#This method returns a list of tuples, with each tuple containing a word and\n",
+    "#Since we only want the most common word, we extract the first tuple using\n",
+    "most_common_word, count = word_counts.most_common (1)[0]\n",
+    "\n",
+    "#Print the result\n",
+    "\n",
+    "print(f\"The most common word in {filename} is {most_common_word}\" )"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4a8d3098",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.7"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
